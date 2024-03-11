@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Question Generator</title>
+</head>
+<body>
+    <h3>Questions</h3>
+    <button onclick="genQuestion()">Generate Question</button>
+
+    <script>
+        let questionEl = document.querySelector("h3")
+        let btnEl = document.querySelector("button")
+
+        let questions = ["What's your name?", "How old are you?", "What's your gender?"]
+
+        genQuestion = () => {
+            questNo = Math.floor(Math.random() * questions.length);
+            
+            questionEl.innerHTML = questions[questNo]
+        }
+    </script>
+</body>
+</html>
+
