@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="color-container">
+            <div class="color-box">
+                <span class="color-code">
+
+                </span>
+
+            </div>
+
+            <div class="color-form">
+                <label for="color-picker">
+                    <span>Pick your color: </span>
+                    <input type="color" name="" id="color-picker">
+                </label>
+
+                <button id="btn-el">Set Color</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let colorPicker = document.querySelector("input#color-picker");
+        let btnEl = document.querySelector("button#btn-el")
+
+        let colorBox = document.querySelector("div.color-box")
+        let colorCode = document.querySelector("span.color-code");
+
+        let colorChoice;
+
+        btnEl.addEventListener("click",
+        () => {
+            setColor();
+        })
+
+        function setColor() {
+            colorChoice = colorPicker.value;
+            colorCode.innerText = colorChoice;
+            console.log(colorChoice);
+            colorBox.style.backgroundColor = `${colorChoice}`;
+        }
+
+        setColor();
+        
+    </script>
+</body>
+</html>
